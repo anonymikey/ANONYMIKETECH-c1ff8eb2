@@ -1,0 +1,639 @@
+ PREMIUM ANONYMIKETECH Cursor System 
+
+
+
+Design and implement a premium cinematic cursor system for the ANONYMIKETECH platform.
+
+
+
+The cursor should feel like controlling a futuristic AI operating system rather than a normal website.
+
+
+
+Do **not** use any third-party cursor libraries.
+
+
+
+Build everything using React + TypeScript + CSS animations + requestAnimationFrame.
+
+
+
+Create it as a reusable component:
+
+
+
+```tsx
+
+<PremiumCursor />
+
+```
+
+
+
+The component should automatically initialize across the entire application.
+
+
+
+---
+
+
+
+## Cursor Design
+
+
+
+Create two cursor layers.
+
+
+
+### Inner Core
+
+
+
+Small glowing blue energy core.
+
+
+
+Diameter:
+
+
+
+* 8px
+
+
+
+Effects:
+
+
+
+* electric blue glow
+
+* subtle pulse animation
+
+* glass-like appearance
+
+* bloom effect
+
+* perfectly centered
+
+
+
+---
+
+
+
+### Outer Ring
+
+
+
+Diameter:
+
+
+
+* 34px
+
+
+
+Appearance:
+
+
+
+* thin cyan ring
+
+* slight transparency
+
+* animated rotation
+
+* breathing opacity
+
+* rotating HUD markings
+
+* tiny tracking dots
+
+
+
+The ring should rotate continuously while moving.
+
+
+
+---
+
+
+
+## Motion
+
+
+
+Do NOT directly follow the mouse.
+
+
+
+Use smooth interpolation.
+
+
+
+Movement should feel physical.
+
+
+
+Implement using:
+
+
+
+requestAnimationFrame
+
+
+
+with easing.
+
+
+
+Target:
+
+
+
+* 120 FPS capable
+
+* buttery smooth movement
+
+* no lag
+
+* no jitter
+
+
+
+---
+
+
+
+## Magnetic Hover
+
+
+
+Buttons should attract the cursor.
+
+
+
+When hovering buttons:
+
+
+
+* cursor gently snaps toward center
+
+* ring expands
+
+* blue glow intensifies
+
+* button slightly lifts
+
+* button emits cyan glow
+
+* magnetic force eases in/out
+
+
+
+Never snap instantly.
+
+
+
+---
+
+
+
+## Cards
+
+
+
+Service cards
+
+
+
+Project cards
+
+
+
+Portfolio cards
+
+
+
+Feature cards
+
+
+
+should react as the cursor moves.
+
+
+
+Effects:
+
+
+
+* 3D tilt
+
+* light follows cursor
+
+* border glow
+
+* glass reflection
+
+* shadow shifts naturally
+
+
+
+Use CSS transforms only.
+
+
+
+---
+
+
+
+## Links
+
+
+
+Text links should:
+
+
+
+* glow cyan
+
+* underline animates
+
+* cursor ring compresses slightly
+
+* inner core becomes brighter
+
+
+
+---
+
+
+
+## Text Areas
+
+
+
+When hovering text:
+
+
+
+Transform the cursor into:
+
+
+
+* thin vertical beam
+
+* animated blinking caret
+
+* maintain cyan glow
+
+
+
+---
+
+
+
+## Images
+
+
+
+Hovering images should:
+
+
+
+* enlarge outer ring
+
+* show rotating scan effect
+
+* subtle ripple animation
+
+
+
+---
+
+
+
+## Interactive Icons
+
+
+
+Hovering icons should trigger:
+
+
+
+* pulse wave
+
+* rotating ring
+
+* tiny spark particles
+
+
+
+---
+
+
+
+## Particle Trail
+
+
+
+Behind the cursor generate particles.
+
+
+
+Particles:
+
+
+
+* cyan
+
+* blue
+
+* occasional gold accent
+
+* fade naturally
+
+* shrink while disappearing
+
+
+
+Maximum:
+
+
+
+20 particles
+
+
+
+Particles must recycle.
+
+
+
+No DOM spam.
+
+
+
+---
+
+
+
+## Click Animation
+
+
+
+On click:
+
+
+
+Generate a small energy pulse.
+
+
+
+Sequence:
+
+
+
+Core compresses
+
+
+
+↓
+
+
+
+Ring contracts
+
+
+
+↓
+
+
+
+Energy wave expands
+
+
+
+↓
+
+
+
+Glow fades
+
+
+
+Duration:
+
+
+
+300ms
+
+
+
+---
+
+
+
+## Idle Animation
+
+
+
+When the mouse stops moving:
+
+
+
+Cursor should slowly breathe.
+
+
+
+Ring rotates continuously.
+
+
+
+Energy core pulses every few seconds.
+
+
+
+Tiny particles orbit the cursor.
+
+
+
+---
+
+
+
+## Scroll Feedback
+
+
+
+During page scrolling:
+
+
+
+Outer ring stretches vertically.
+
+
+
+Small motion blur appears.
+
+
+
+Returns to normal when scrolling stops.
+
+
+
+---
+
+
+
+## SYNTH AI Interaction
+
+
+
+When hovering anything related to SYNTH AI:
+
+
+
+Trigger a premium AI scan.
+
+
+
+Effects:
+
+
+
+* rotating hexagon
+
+* scanning beam
+
+* data pulse
+
+* holographic ripple
+
+* AI activity glow
+
+
+
+---
+
+
+
+## Performance
+
+
+
+Use:
+
+
+
+* requestAnimationFrame
+
+* CSS transforms
+
+* opacity animations
+
+* GPU acceleration
+
+* translate3d()
+
+* will-change
+
+
+
+Avoid expensive repaint operations.
+
+
+
+---
+
+
+
+## Accessibility
+
+
+
+Automatically disable the custom cursor on:
+
+
+
+* touch devices
+
+* tablets
+
+* coarse pointers
+
+* reduced-motion preference
+
+
+
+Fall back to the native cursor automatically.
+
+
+
+---
+
+
+
+## Component Architecture
+
+
+
+Create:
+
+
+
+```
+
+components/cursor/
+
+│
+
+├── PremiumCursor.tsx
+
+├── CursorCore.tsx
+
+├── CursorRing.tsx
+
+├── CursorParticles.tsx
+
+├── CursorMagnet.ts
+
+├── CursorContext.tsx
+
+├── useCursor.ts
+
+└── cursor.css
+
+```
+
+
+
+Everything must be modular and reusable.
+
+
+
+---
+
+
+
+## Integration
+
+
+
+Initialize globally inside the root layout so every page automatically uses the cursor.
+
+
+
+No page should require additional setup.
+
+
+
+---
+
+
+
+## Final Experience
+
+
+
+The cursor should feel like the user is operating an advanced AI command center inspired by futuristic interfaces such as JARVIS, holographic operating systems, and high-end sci-fi control rooms. Every interaction should feel alive, fluid, responsive, elegant, and premium without becoming distracting or reducing performance.

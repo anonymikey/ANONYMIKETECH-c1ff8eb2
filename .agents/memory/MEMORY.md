@@ -1,0 +1,7 @@
+- [ANONYMIKETECH brand system](anonymiketech-brand-system.md) — keep all brand marks centralized through the reusable SVG Logo/BrandMark components.
+- [Global boot behavior](global-boot-system.md) — the official MP4 gates first reveal; heavy cinematic frames continue loading in the background.
+- [Premium cursor system](premium-cursor-system.md) — keep cursor effects RAF-driven, delegated, GPU-friendly, and disabled for coarse pointers/reduced motion.
+- [Cinematic page transitions](cinematic-page-transitions.md) — keep navigation transitions history-driven and coordinate scroll restoration through the Lenis bridge.
+- [Global ambient system](global-ambient-system.md) — keep ambient layers inside the shell beneath content, with transform/opacity motion and adaptive low-cost modes.
+- [Global HUD system](global-hud-system.md) — keep telemetry fixed, pointer-free, responsive, and layered above ambient effects but beneath readable content.
+- [Command palette system](command-palette-system.md) — keep global command search instant, hash-navigation aware, keyboard-first, and compatible with existing transition overlays.

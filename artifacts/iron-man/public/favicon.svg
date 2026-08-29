@@ -1,0 +1,33 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blue" x1="20" y1="14" x2="200" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0FBFF"/>
+      <stop offset=".4" stop-color="#7CE7FF"/>
+      <stop offset="1" stop-color="#0876BD"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="40" y1="48" x2="180" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE8A4"/>
+      <stop offset=".5" stop-color="#D4A22F"/>
+      <stop offset="1" stop-color="#87601A"/>
+    </linearGradient>
+    <radialGradient id="core" cx="0" cy="0" r="1" gradientTransform="translate(103 110) rotate(48) scale(27)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white"/>
+      <stop offset=".28" stop-color="#9FF2FF"/>
+      <stop offset="1" stop-color="#075A9D"/>
+    </radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+  <path d="M110 14 20 196h180L110 14Z" stroke="#39C7F1" stroke-width="18" opacity=".28" filter="url(#glow)"/>
+  <path d="M110 14 20 196h180L110 14Z" fill="#092337" fill-opacity=".32" stroke="url(#blue)" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m110 42-58 127h116L110 42Z" stroke="#81DCF3" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M110 42v154M52 169l58-45 58 45M110 124l-25 45M110 124l25 45" stroke="url(#blue)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m74 82-34-34M146 82l34-34" stroke="url(#gold)" stroke-width="2.8" stroke-linecap="round"/>
+  <circle cx="40" cy="48" r="5.5" fill="#E8BF61" stroke="#FFF0B9" stroke-width="1.5"/>
+  <circle cx="180" cy="48" r="5.5" fill="#E8BF61" stroke="#FFF0B9" stroke-width="1.5"/>
+  <circle cx="110" cy="117" r="27" fill="#1CAEE3" opacity=".3" filter="url(#glow)"/>
+  <circle cx="110" cy="117" r="25" fill="#062F59" stroke="#54D8F5" stroke-width="3"/>
+  <circle cx="110" cy="117" r="19" fill="url(#core)"/>
+  <circle cx="103" cy="110" r="6" fill="white" opacity=".75"/>
+</svg>
