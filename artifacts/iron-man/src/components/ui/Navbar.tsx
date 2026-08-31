@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowUpRight, CaretDown, List, X } from "@phosphor-icons/react";
+import { ArrowUpRight, CaretDown, X } from "@phosphor-icons/react";
 import { Logo } from "@/components/ui/Logo";
 import { HudFrame } from "@/components/ui/HudFrame";
 import { useScrollDirection } from "@/components/hooks/useScrollDirection";
@@ -459,21 +459,43 @@ export function Navbar() {
         )}
       </header>
 
-      {/* ─── MOBILE HAMBURGER (SEPARATE from header — always clickable) ─── */}
+      {/* ─── MOBILE HAMBURGER (animated bars → X toggle) ─── */}
       <button
-        className={`fixed right-5 top-3.5 z-50 flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-[#0a0a0b]/80 backdrop-blur-xl text-zinc-400 transition-all duration-300 md:hidden ${
+        className={`fixed right-4 top-3 z-50 flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0a0a0b]/80 backdrop-blur-xl transition-all duration-300 md:hidden ${
           mobileOpen ? "opacity-0 pointer-events-none" : "opacity-100"
         } ${
-          isVisible
-            ? "translate-y-0"
-            : scrolled
-              ? "translate-y-0"
-              : "translate-y-0"
+          isVisible ? "translate-y-0" : "translate-y-0"
         }`}
-        onClick={() => setMobileOpen(true)}
-        aria-label="Open navigation"
+        onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+        aria-expanded={mobileOpen}
       >
-        <List size={18} />
+        <div className="relative flex h-full w-full flex-col items-center justify-center gap-[10px]">
+          {/* Bar 1 — top */}
+          <span
+            className={`block h-1 rounded bg-accent transition-all duration-500 ${
+              mobileOpen
+                ? "absolute w-full rotate-45"
+                : "w-[70%] rotate-0"
+            }`}
+          />
+          {/* Bar 2 — middle (scales away) */}
+          <span
+            className={`block h-1 rounded bg-accent transition-all duration-[800ms] ${
+              mobileOpen
+                ? "absolute w-full scale-x-0"
+                : "w-full scale-x-100"
+            }`}
+          />
+          {/* Bar 3 — bottom */}
+          <span
+            className={`block h-1 rounded bg-accent transition-all duration-500 ${
+              mobileOpen
+                ? "absolute w-full -rotate-45"
+                : "w-[70%] rotate-0"
+            }`}
+          />
+        </div>
       </button>
 
       {/* ─── MOBILE MENU ─── */}
