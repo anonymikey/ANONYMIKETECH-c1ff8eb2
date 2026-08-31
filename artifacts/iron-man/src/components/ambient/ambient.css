@@ -15,8 +15,13 @@
 
 /* The atmospheric stack sits between the shell's painted background and its
    readable content. This keeps the system visible without creating a click
-   surface or competing with section copy. */
-.app-shell > *:not(.ambient-engine):not(.global-hud) {
+   surface or competing with section copy.
+
+   Only target <main> and <footer> so fixed-position navbar elements
+   (header, mobile hamburger, mobile menu) keep their Tailwind z-index
+   and position:fixed from the utilities layer. */
+.app-shell > main,
+.app-shell > footer {
   position: relative;
   z-index: 2;
 }
