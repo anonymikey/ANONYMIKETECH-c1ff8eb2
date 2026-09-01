@@ -359,9 +359,9 @@ export function Navbar() {
 
   return (
     <>
-      {/* ─── HEADER (hides on scroll down, shows on scroll up) ─── */}
+      {/* ─── HEADER (slides up on scroll-down, slides in on scroll-up) ─── */}
       <header
-        className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ease-out ${
+        className={`fixed inset-x-0 top-0 z-40 transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] ${
           isVisible
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"
@@ -461,10 +461,12 @@ export function Navbar() {
 
       {/* ─── MOBILE HAMBURGER (animated bars → X toggle) ─── */}
       <button
-        className={`fixed right-4 top-3 z-50 flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0a0a0b]/80 backdrop-blur-xl transition-all duration-300 md:hidden ${
+        className={`fixed right-4 top-3 z-50 flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-[#0a0a0b]/80 backdrop-blur-xl transition-all duration-[400ms] [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] md:hidden ${
           mobileOpen ? "opacity-0 pointer-events-none" : "opacity-100"
         } ${
-          isVisible ? "translate-y-0" : "translate-y-0"
+          isVisible
+            ? "translate-y-0"
+            : "-translate-y-full opacity-0 pointer-events-none"
         }`}
         onClick={() => setMobileOpen(!mobileOpen)}
         aria-label={mobileOpen ? "Close navigation" : "Open navigation"}

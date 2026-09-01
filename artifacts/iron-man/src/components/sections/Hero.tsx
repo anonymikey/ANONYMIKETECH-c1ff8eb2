@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
-import { HudFrame } from "@/components/ui/HudFrame";
 import {
   useLoadingReady,
   useLoadingReporter,
@@ -14,8 +13,6 @@ export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const heroTextRef = useRef<HTMLDivElement | null>(null);
   const bigLeftTextRef = useRef<HTMLDivElement | null>(null);
-  const progressFillRef = useRef<HTMLDivElement | null>(null);
-  const powerReadoutRef = useRef<HTMLSpanElement | null>(null);
 
   const framesRef = useRef<HTMLImageElement[]>([]);
   const tickingRef = useRef(false);
@@ -164,15 +161,6 @@ export function Hero() {
           bigLeftTextRef.current.style.transform = `translateY(${(1 - op) * 14}px)`;
         }
 
-        if (progressFillRef.current) {
-          progressFillRef.current.style.transform = `scaleX(${progress})`;
-        }
-
-        if (powerReadoutRef.current) {
-          const pwr = 87.3 + Math.sin(progress * Math.PI * 2) * 6.7;
-          powerReadoutRef.current.textContent = pwr.toFixed(1) + "%";
-        }
-
         const newVisible = new Set<string>();
         for (const d of DIALOGUES) {
           if (progress >= d.show && progress <= d.hide) newVisible.add(d.id);
@@ -210,19 +198,6 @@ export function Hero() {
           }}
         />
 
-        <div className="pointer-events-none absolute left-6 top-24 text-accent md:left-10 md:top-28">
-          <HudFrame corner="tl" size={26} />
-        </div>
-        <div className="pointer-events-none absolute right-6 top-24 text-accent md:right-10 md:top-28">
-          <HudFrame corner="tr" size={26} />
-        </div>
-        <div className="pointer-events-none absolute bottom-14 left-6 text-accent md:bottom-16 md:left-10">
-          <HudFrame corner="bl" size={26} />
-        </div>
-        <div className="pointer-events-none absolute bottom-14 right-6 text-accent md:bottom-16 md:right-10">
-          <HudFrame corner="br" size={26} />
-        </div>
-
         <div
           ref={heroTextRef}
           className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start gap-5 px-6 pb-24 md:px-12 md:pb-28"
@@ -257,41 +232,6 @@ export function Hero() {
             <p className="max-w-[36ch] font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-400">
              AI &bull; Web &bull; Cloud &bull; Internet Solutions
           </p>
-        </div>
-
-        <div className="pointer-events-none absolute left-6 top-20 z-10 flex items-center gap-2 md:left-10 md:top-24">
-          <div className="h-px w-8 bg-accent/60" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-zinc-400">
-            Telemetry Link &mdash; Live
-          </span>
-        </div>
-
-        <div className="pointer-events-none absolute right-6 top-20 z-10 flex items-center gap-3 md:right-10 md:top-24">
-          <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-zinc-400">
-            System Status
-          </span>
-          <span
-            ref={powerReadoutRef}
-            className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent"
-          >
-            87.3%
-          </span>
-          <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px_rgba(212,162,47,0.85)]" />
-        </div>
-
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10">
-          <div className="mx-6 mb-3 h-px bg-white/10 md:mx-10">
-            <div
-              ref={progressFillRef}
-              className="h-full origin-left bg-accent"
-              style={{ transform: "scaleX(0)", transition: "transform 80ms linear" }}
-            />
-          </div>
-          <div className="mx-6 flex items-center justify-between pb-4 font-mono text-[10px] uppercase tracking-[0.28em] text-zinc-500 md:mx-10">
-            <span>SEQ 001 / 169</span>
-            <span>SYSTEM ONLINE // DIAGNOSTIC</span>
-            <span>Scroll &darr;</span>
-          </div>
         </div>
 
         {DIALOGUES.map((d) => {

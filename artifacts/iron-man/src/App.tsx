@@ -13,7 +13,9 @@ import { PageTransition } from "@/components/transitions/PageTransition";
 import { AmbientEngine } from "@/components/ambient/AmbientEngine";
 import { GlobalHUD } from "@/components/hud/GlobalHUD";
 import { CommandPalette } from "@/components/command/CommandPalette";
+import { BackToTop } from "@/components/ui/BackToTop";
 import { PlatformExperience } from "@/components/platform/PlatformExperience";
+import { FounderSection } from "@/components/sections/FounderSection";
 import { ServiceView } from "@/components/cinematic/ServiceView";
 
 function HomePage() {
@@ -23,6 +25,7 @@ function HomePage() {
       <CinematicReveal />
       <SynthSection />
       <SystemsNominal />
+      <FounderSection />
       <PlatformExperience />
     </>
   );
@@ -53,6 +56,7 @@ function AppContent() {
           </Switch>
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </SmoothScrollProvider>
   );
