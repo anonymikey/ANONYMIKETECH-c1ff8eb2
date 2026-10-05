@@ -6,8 +6,8 @@ import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 const projects = [
   { id: "anonymiketech", name: "ANONYMIKETECH", status: "LIVE", category: "AI • Web • Cloud • Internet Solutions", description: "A technology and innovation platform focused on AI, web development, cloud solutions, internet services, and digital experiences.", image: "/favicon.svg", url: "https://anonymiketech.space", featured: true },
   { id: "synth", name: "SYNTH", status: "COMING SOON", category: "AI Agent / Development Platform", description: "An intelligent development platform currently in active development.", image: "/developer.jpg", comingSoon: true },
-  { id: "economic-justice-forum", name: "ECONOMIC JUSTICE FORUM", status: "LIVE", category: "Web Development • Organization Website", description: "A professional web platform created for Economic Justice Forum.", image: "/developer.jpg", url: "https://www.economicjusticeforum.org" },
-  { id: "ecostruct-dynamics", name: "ECOSTRUCT DYNAMICS LTD", status: "LIVE", category: "Web Development • Corporate Website", description: "A professional corporate website created for EcoStruct Dynamics Ltd.", image: "/developer.jpg", url: "https://www.ecostructdynamicsltd.com" },
+  { id: "economic-justice-forum", name: "ECONOMIC JUSTICE FORUM", status: "LIVE", category: "Web Development • Organization Website", description: "A professional web platform created for Economic Justice Forum.", image: "/ejf-logo.png", url: "https://www.economicjusticeforum.org" },
+  { id: "ecostruct-dynamics", name: "ECOSTRUCT DYNAMICS LTD", status: "LIVE", category: "Web Development • Corporate Website", description: "A professional corporate website created for EcoStruct Dynamics Ltd.", image: "/ecostruct-logo.jpg", url: "https://www.ecostructdynamicsltd.com" },
 ] as const;
 
 type Filter = "ALL" | "LIVE" | "COMING SOON";
