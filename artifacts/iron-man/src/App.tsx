@@ -16,6 +16,7 @@ import { CommandPalette } from "@/components/command/CommandPalette";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { PlatformExperience } from "@/components/platform/PlatformExperience";
 import { FounderSection } from "@/components/sections/FounderSection";
+import { LiveProjects } from "@/components/sections/LiveProjects";
 import { ServiceView } from "@/components/cinematic/ServiceView";
 
 function HomePage() {
@@ -26,6 +27,7 @@ function HomePage() {
       <SynthSection />
       <SystemsNominal />
       <FounderSection />
+      <LiveProjects />
       <PlatformExperience />
     </>
   );
