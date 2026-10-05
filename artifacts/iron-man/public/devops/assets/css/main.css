@@ -8646,7 +8646,24 @@ body.tw-magic-cursor #magic-cursor {
 }
 @media screen and (max-width: 575px) {
   .banner-three-man {
-    inset-block-end: 38%;
+    inset-block-end: 0;
+    width: 100%;
+    height: clamp(340px, 92vw, 430px);
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .banner-three-man img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .banner-three-man {
+    height: clamp(310px, 88vw, 360px);
   }
 }
 
