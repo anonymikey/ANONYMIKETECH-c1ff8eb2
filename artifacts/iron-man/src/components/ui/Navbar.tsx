@@ -257,7 +257,7 @@ function MobileMenu({
             { href: "/#synth", label: "SYNTH", icon: "◈" },
             { href: "/#systems", label: "Systems", icon: "⬡" },
             { href: "/#archive", label: "Archive", icon: "▤" },
-            { href: "/devops/index.html", label: "Meet the developer", icon: "⌘" },
+            { href: "/devops/", label: "Meet the developer", icon: "⌘" },
           ].map((item) => (
             <a
               key={item.href}
@@ -434,6 +434,12 @@ export function Navbar() {
               className="rounded-lg px-3 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-400 transition-colors hover:text-foreground"
             >
               Archive
+            </a>
+            <a
+              href="/devops/"
+              className="rounded-lg px-3 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-400 transition-colors hover:text-foreground"
+            >
+              Meet the developer
             </a>
           </nav>
 
