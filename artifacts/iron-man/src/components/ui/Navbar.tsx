@@ -257,6 +257,7 @@ function MobileMenu({
             { href: "/#synth", label: "SYNTH", icon: "◈" },
             { href: "/#systems", label: "Systems", icon: "⬡" },
             { href: "/#archive", label: "Archive", icon: "▤" },
+            { href: "/devops/index.html", label: "Meet the developer", icon: "⌘" },
           ].map((item) => (
             <a
               key={item.href}
