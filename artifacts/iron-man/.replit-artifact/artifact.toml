@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "ANONYMIKETECH — Innovating the Future"
+description = "ANONYMIKETECH — Innovating the Future. AI • Web • Cloud • Internet Solutions."
+version = "1.0.0"
+id = "artifacts/iron-man"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25791
+
+[services.development]
+run = "pnpm --filter @workspace/iron-man run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/iron-man", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/iron-man/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25791"
+BASE_PATH = "/"

@@ -1,0 +1,218 @@
+Implement the Premium ANONYMIKETECH Cursor System
+
+Proceed with implementing the Premium Cursor System as a global interaction layer.
+
+This is not a new page or standalone feature. It must integrate seamlessly with the existing cinematic experience.
+
+Do not modify the Hero frame engine, cinematic scroll engine, loader, routing, animations, branding, or existing layouts.
+
+Architecture
+
+Create the following reusable structure:
+
+components/cursor/
+│
+├── PremiumCursor.tsx
+├── CursorCore.tsx
+├── CursorRing.tsx
+├── CursorParticles.tsx
+├── CursorMagnet.ts
+├── CursorContext.tsx
+├── useCursor.ts
+└── cursor.css
+
+Mount the cursor globally inside the application root so every page automatically inherits it.
+
+Cursor Design
+Inner Core
+8px energy core
+electric blue glow
+soft bloom
+animated pulse
+glass appearance
+Outer Ring
+
+34px transparent HUD ring.
+
+Include:
+
+rotating segments
+tracking markers
+breathing opacity
+subtle cyan glow
+slight rotation while moving
+Motion
+
+Do not directly follow the pointer.
+
+Use requestAnimationFrame interpolation.
+
+Movement should feel physical and cinematic.
+
+Target smooth 120Hz capable rendering.
+
+GPU accelerated only.
+
+Particle System
+
+Generate a lightweight particle trail.
+
+Maximum:
+
+20 particles
+
+Each particle should:
+
+recycle instead of recreating
+fade naturally
+shrink over time
+random blue/cyan
+occasional gold accent
+
+Never create unnecessary DOM elements.
+
+Magnetic Hover
+
+Buttons should gently attract the cursor.
+
+While hovering:
+
+cursor snaps softly toward button center
+outer ring expands
+core glows brighter
+button lifts slightly
+cyan border glow increases
+
+Use smooth easing.
+
+Card Interaction
+
+The existing Hero cards, Service cards, Portfolio cards, SYNTH section cards, and Cinematic panels should respond.
+
+Effects:
+
+subtle 3D tilt
+border glow
+moving highlight
+shadow shift
+glass reflection
+
+Never exaggerate movement.
+
+Maximum tilt:
+
+8°
+Links
+
+When hovering links:
+
+ring compresses slightly
+underline animates
+cyan glow increases
+Images
+
+Hovering images:
+
+ring enlarges
+rotating scan animation
+holographic ripple
+Text
+
+Hovering editable text:
+
+Transform the cursor into a futuristic blinking beam while maintaining the blue glow.
+
+Click
+
+Click animation:
+
+Core compresses
+
+↓
+
+Ring contracts
+
+↓
+
+Energy pulse expands
+
+↓
+
+Glow fades
+
+
+Duration:
+
+300ms
+Idle
+
+When stationary:
+
+slow breathing animation
+continuous HUD rotation
+orbiting particles
+subtle energy pulse
+Scroll
+
+While scrolling:
+
+ring stretches vertically
+slight motion blur
+returns smoothly afterwards
+SYNTH AI
+
+Elements marked with:
+
+data-synth
+
+or
+
+.synth
+
+should trigger a premium AI scan mode.
+
+Effects:
+
+rotating hexagon
+holographic pulse
+cyan scanning beam
+animated AI data ring
+Accessibility
+
+Automatically disable the custom cursor when:
+
+touch devices
+coarse pointers
+tablets
+reduced-motion preference
+
+Use the native system cursor instead.
+
+Performance
+
+Maintain excellent performance.
+
+Requirements:
+
+requestAnimationFrame
+CSS transforms only
+opacity animations
+translate3d()
+will-change
+passive listeners
+no layout thrashing
+no unnecessary React re-renders
+Quality
+
+The cursor should feel like interacting with an advanced AI operating system.
+
+Use the same visual language already established throughout ANONYMIKETECH:
+
+black backgrounds
+cyan holograms
+blue energy
+gold accents
+glassmorphism
+HUD graphics
+
+The cursor must enhance the experience without distracting from the cinematic content

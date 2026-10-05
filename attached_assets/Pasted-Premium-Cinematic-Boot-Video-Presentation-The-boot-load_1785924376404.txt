@@ -1,0 +1,137 @@
+Premium Cinematic Boot Video Presentation
+
+The boot loader is working, but I want the presentation of the boot video to feel like a premium operating system startup.
+
+My boot video is portrait (1024×1536) while the website is landscape, so redesign the loader to present the video elegantly instead of stretching or cropping it.
+
+Layout
+
+Create a full-screen black loading environment.
+
+Display the boot video in the exact center of the screen.
+
+The video must use:
+
+object-fit: contain
+preserve its original aspect ratio
+never stretch
+never crop
+remain perfectly centered
+Background
+
+Behind the centered video, generate a fullscreen background using the same video.
+
+The background version should:
+
+fill the entire screen
+use object-fit: cover
+be heavily blurred (40–60px)
+slightly darkened
+reduced opacity (25–35%)
+
+This creates a cinematic ambient glow behind the main video.
+
+HUD Overlay
+
+Around the centered video, build a futuristic ANONYMIKETECH HUD.
+
+Include:
+
+rotating cyan HUD rings
+thin gold targeting brackets
+animated scan lines
+subtle grid overlay
+tiny telemetry labels
+glowing corner markers
+digital coordinate indicators
+AI diagnostic lines
+animated particles
+faint cyan bloom around the video
+
+Everything should animate smoothly at low intensity.
+
+No flashy effects.
+
+Keep it elegant.
+
+Branding
+
+Display the official ANONYMIKETECH logo above the video.
+
+Below it display the current loading status.
+
+Statuses rotate through:
+
+SYSTEM INITIALIZING
+LOADING UI ENGINE
+CONNECTING SYNTH AI
+VERIFYING MODULES
+INITIALIZING CLOUD CORE
+PREPARING PORTFOLIO
+SYSTEM ONLINE
+
+Animate the text with a smooth fade transition.
+
+Progress
+
+At the bottom of the loader create a premium progress system.
+
+Include:
+
+glowing progress line
+animated percentage counter
+moving energy pulse
+subtle glow trail
+smooth interpolation
+never jump abruptly
+
+Progress should feel continuous.
+
+Visual Style
+
+Match the style of:
+
+Jarvis
+Iron Man HUD
+Apple Vision Pro boot
+high-end AI operating systems
+futuristic command center
+
+Use only:
+
+black
+cyan
+electric blue
+gold
+white
+Performance
+
+The loader must remain GPU-friendly.
+
+Animations should use CSS transforms and opacity whenever possible.
+
+Avoid layout thrashing.
+
+Respect reduced-motion preferences.
+
+Reusability
+
+Keep the implementation modular.
+
+The loader should remain reusable as:
+
+<GlobalLoader />
+
+with:
+
+BootVideo
+LoadingOverlay
+ProgressHUD
+StatusDisplay
+LogoReveal
+
+as independent components.
+
+Final Goal
+
+The user should feel like they are booting into an advanced AI operating system.

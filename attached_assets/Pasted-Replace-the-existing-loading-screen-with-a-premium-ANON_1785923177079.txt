@@ -1,0 +1,223 @@
+Replace the existing loading screen with a premium ANONYMIKETECH Global Boot System.
+
+The uploaded boot video is now the official loading animation.
+
+Do not recreate the animation.
+
+Use the uploaded MP4 exactly as provided.
+
+Store all loading logic inside reusable components.
+
+-----------------------------------
+BOOT VIDEO
+-----------------------------------
+
+Use the uploaded boot video as the primary loader.
+
+Play it automatically.
+
+Mute audio.
+
+Do not allow users to skip it during the initial application boot.
+
+Fade in from black.
+
+Fade out smoothly into the application.
+
+Never stretch or distort the video.
+
+Maintain aspect ratio.
+
+-----------------------------------
+WHEN TO USE
+-----------------------------------
+
+The Global Loader should automatically appear during:
+
+• First website load
+
+• Internal page navigation
+
+• Lazy loaded components
+
+• Heavy frame sequences
+
+• Video assets
+
+• Dynamic imports
+
+• Suspense boundaries
+
+• Route transitions
+
+• Any async loading longer than approximately 250ms
+
+Small operations should instead use lightweight inline skeleton loaders.
+
+-----------------------------------
+INITIAL BOOT
+-----------------------------------
+
+First visit:
+
+Play the full boot video.
+
+After the video finishes:
+
+Initialize application.
+
+Reveal website with a cinematic fade.
+
+-----------------------------------
+RETURN VISITS
+-----------------------------------
+
+Do not replay the full video every time.
+
+Within the same browser session:
+
+Play a shortened loader consisting of:
+
+Animated logo
+
+HUD rings
+
+Progress animation
+
+Duration around 1 second.
+
+Only replay the full boot sequence after a hard refresh or a completely new browser session.
+
+-----------------------------------
+LOADER OVERLAY
+-----------------------------------
+
+While the video plays:
+
+Overlay a subtle HUD interface.
+
+Display:
+
+ANONYMIKETECH
+
+Loading...
+
+Status text
+
+Current loading percentage
+
+The overlay must not block the video.
+
+Use subtle opacity.
+
+-----------------------------------
+STATUS ROTATION
+-----------------------------------
+
+Rotate through:
+
+SYSTEM INITIALIZING
+
+LOADING UI ENGINE
+
+CONNECTING SYNTH AI
+
+VERIFYING MODULES
+
+LOADING SERVICES
+
+INITIALIZING CLOUD CORE
+
+PREPARING PORTFOLIO
+
+SYSTEM ONLINE
+
+Animate each status with smooth fades.
+
+-----------------------------------
+PROGRESS
+-----------------------------------
+
+Progress should reflect actual loading whenever possible.
+
+If exact values are unavailable, interpolate smoothly without sudden jumps.
+
+Never jump instantly from low percentages to 100%.
+
+-----------------------------------
+TRANSITIONS
+-----------------------------------
+
+Website fades in after completion.
+
+Navigation between pages should reuse the same Global Loader system.
+
+Use shorter transitions after the initial boot.
+
+No white flashes.
+
+No abrupt cuts.
+
+-----------------------------------
+PERFORMANCE
+-----------------------------------
+
+Preload the video.
+
+Avoid layout shifts.
+
+Prevent unnecessary rerenders.
+
+Keep the loader mounted globally.
+
+Optimize for desktop and mobile.
+
+-----------------------------------
+COMPONENTS
+-----------------------------------
+
+Create:
+
+<GlobalLoader />
+
+<BootVideo />
+
+<MiniLoader />
+
+<LoaderProvider />
+
+<LoadingOverlay />
+
+Use React Context so any future component can trigger loading.
+
+-----------------------------------
+CONFIGURATION
+-----------------------------------
+
+Create:
+
+src/config/loader.ts
+
+Allow easy editing of:
+
+Video path
+
+Status messages
+
+Loader duration
+
+Transition timings
+
+Replay rules
+
+-----------------------------------
+DESIGN
+-----------------------------------
+
+Keep the existing cinematic HUD aesthetic.
+
+Preserve the current frame engine, scroll engine, animations, branding, logo, and overall visual identity.
+
+The loader should feel like users are booting into the ANONYMIKETECH operating system rather than opening a standard website.
+
+Maintain a premium, polished, production-ready implementation.
