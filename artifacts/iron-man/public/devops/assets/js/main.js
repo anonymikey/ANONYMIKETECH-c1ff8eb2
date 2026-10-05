@@ -260,6 +260,101 @@
   });
 
   $(document).ready(function () {
+    const projects = [
+      {
+        id: "anonymiketech",
+        name: "ANONYMIKETECH",
+        status: "LIVE",
+        category: "AI • Web • Cloud • Internet Solutions",
+        description: "A technology and innovation platform focused on AI, web development, cloud solutions, internet services, and digital experiences.",
+        image: "assets/images/logo/logo.png",
+        alt: "ANONYMIKETECH logo",
+        url: "https://anonymiketech.space",
+        featured: true,
+      },
+      {
+        id: "synth",
+        name: "SYNTH",
+        status: "COMING SOON",
+        category: "AI Agent / Development Platform",
+        description: "An intelligent development platform currently in active development.",
+        image: "assets/images/thumbs/coming-soon-img.png",
+        alt: "SYNTH coming soon visual",
+        comingSoon: true,
+      },
+      {
+        id: "economic-justice-forum",
+        name: "ECONOMIC JUSTICE FORUM",
+        status: "LIVE",
+        category: "Web Development • Organization Website",
+        description: "A professional web platform created for Economic Justice Forum.",
+        image: "assets/images/thumbs/portfolio-three-thumb2.jpg",
+        alt: "Economic Justice Forum project preview",
+        url: "https://www.economicjusticeforum.org",
+      },
+      {
+        id: "ecostruct-dynamics",
+        name: "ECOSTRUCT DYNAMICS LTD",
+        status: "LIVE",
+        category: "Web Development • Corporate Website",
+        description: "A professional corporate website created for EcoStruct Dynamics Ltd.",
+        image: "assets/images/thumbs/portfolio-three-thumb4.jpg",
+        alt: "EcoStruct Dynamics Ltd project preview",
+        url: "https://www.ecostructdynamicsltd.com",
+      },
+    ];
+
+    const workSection = document.getElementById("work");
+    const viewProjectsButton = document.querySelector('.banner-three-button a[href="#work"]');
+
+    if (workSection) {
+      const renderProjects = (filter = "ALL") => {
+        const visibleProjects = projects.filter((project) => filter === "ALL" || project.status === filter);
+        workSection.innerHTML = `
+          <div class="live-projects-shell">
+            <div class="live-projects-heading">
+              <div>
+                <p class="live-projects-eyebrow">PROJECT ARCHIVE / 2026</p>
+                <h2>Live Projects</h2>
+                <p class="live-projects-intro">Selected platforms, client work, and the next generation of intelligent products.</p>
+              </div>
+              <div class="live-projects-filters" role="group" aria-label="Filter projects">
+                ${["ALL", "LIVE", "COMING SOON"].map((filterName) => `<button type="button" class="live-project-filter ${filter === filterName ? "is-active" : ""}" data-project-filter="${filterName}">${filterName}</button>`).join("")}
+              </div>
+            </div>
+            <div class="live-projects-grid">
+              ${visibleProjects.map((project, index) => `
+                <article class="live-project-card ${project.featured ? "is-featured" : ""} ${project.comingSoon ? "is-coming-soon" : ""}" style="--project-delay: ${index * 90}ms">
+                  <div class="live-project-visual">
+                    <span class="live-project-gridline"></span>
+                    <img src="${project.image}" alt="${project.alt}" loading="lazy" />
+                    ${project.featured ? '<span class="live-project-telemetry">SYSTEM ONLINE<br>LIVE PLATFORM<br>AI SYSTEMS</span>' : ""}
+                  </div>
+                  <div class="live-project-content">
+                    <div class="live-project-status ${project.comingSoon ? "is-soon" : ""}"><span></span>${project.status}</div>
+                    <h3>${project.name}</h3>
+                    <p class="live-project-category">${project.category}</p>
+                    <p class="live-project-description">${project.description}</p>
+                    ${project.comingSoon ? '<span class="live-project-action disabled">IN DEVELOPMENT</span>' : `<a class="live-project-action" href="${project.url}" target="_blank" rel="noopener noreferrer">VIEW PROJECT <i class="ph ph-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> ${project.name} in a new tab</span></a>`}
+                  </div>
+                </article>
+              `).join("")}
+            </div>
+          </div>`;
+
+        workSection.querySelectorAll("[data-project-filter]").forEach((button) => {
+          button.addEventListener("click", () => renderProjects(button.dataset.projectFilter));
+        });
+        if (window.AOS) AOS.refresh();
+      };
+
+      renderProjects();
+      viewProjectsButton?.addEventListener("click", (event) => {
+        event.preventDefault();
+        workSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+
     function initRipples() {
       $(".ripple-image").each(function () {
         var $container = $(this);
