@@ -34,9 +34,15 @@ export function FounderSection() {
             <EyebrowBadge>THE MIND BEHIND THE SYSTEM</EyebrowBadge>
           </AnimatedItem>
           <AnimatedItem>
-            <h2 className="font-sans text-4xl font-semibold leading-[0.95] tracking-tighter text-foreground md:text-6xl lg:text-7xl">
-              Developer <span className="text-accent">&</span> Founder
-            </h2>
+            <a
+              href="/devops/index.html"
+              className="inline-block transition-colors hover:text-accent"
+              aria-label="Meet the developer and founder"
+            >
+              <h2 className="font-sans text-4xl font-semibold leading-[0.95] tracking-tighter text-foreground md:text-6xl lg:text-7xl">
+                Developer <span className="text-accent">&</span> Founder
+              </h2>
+            </a>
           </AnimatedItem>
         </AnimatedSection>
 
