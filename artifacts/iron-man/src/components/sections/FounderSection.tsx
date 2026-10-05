@@ -35,7 +35,7 @@ export function FounderSection() {
           </AnimatedItem>
           <AnimatedItem>
             <a
-              href="/devops/"
+              href="/devops/index.html"
               className="inline-block transition-colors hover:text-accent"
               aria-label="Meet the developer and founder"
             >

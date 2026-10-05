@@ -1,4 +1,176 @@
 /* Media Breakpoint for Each Device End */
+
+/* Responsive portfolio safeguards */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1199px) {
+  .banner-three-area .container,
+  .header-three-area .container,
+  .footer-three-area .container {
+    max-width: 100%;
+  }
+
+  .banner-three-left,
+  .banner-three-right {
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .banner-three-area {
+    padding-block: 56px 72px;
+  }
+
+  .banner-three-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .banner-three-left,
+  .banner-three-center,
+  .banner-three-right {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .banner-three-center {
+    order: -1;
+  }
+
+  .banner-three-center-title {
+    max-width: 760px;
+    margin-inline: auto;
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1.08;
+  }
+
+  .banner-three-right {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .banner-three-counter-item,
+  .banner-three-counter-item.ms-auto {
+    width: 100%;
+    margin-block-end: 0 !important;
+  }
+
+  .tw-offcanvas-2-left {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner-three-area {
+    padding-block: 36px 56px;
+  }
+
+  .banner-three-left ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 16px;
+  }
+
+  .banner-three-left ul li {
+    margin-block-end: 0 !important;
+    font-size: 0.95rem !important;
+  }
+
+  .banner-three-center-title {
+    font-size: clamp(1.9rem, 8vw, 3rem);
+  }
+
+  .banner-three-right {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-three-right .banner-three-counter-item {
+    padding: 20px;
+  }
+
+  .header-three-wordmark {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
+  }
+
+  .header-three-logo,
+  .header-three-menu button {
+    padding: 10px 12px;
+  }
+
+  .footer-three-top,
+  .footer-three-bottom {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container,
+  .container-fluid {
+    width: 100%;
+    padding-inline: 16px;
+  }
+
+  .banner-three-left ul {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-three-left ul li {
+    font-size: 0.9rem !important;
+  }
+
+  .banner-three-center-title {
+    font-size: clamp(1.75rem, 9.5vw, 2.6rem);
+    overflow-wrap: anywhere;
+  }
+
+  .banner-three-button a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tw-offcanvas-2-wrapper {
+    min-height: 100svh;
+  }
+
+  .tw-offcanvas-2-left-wrap {
+    padding-inline: 16px;
+  }
+
+  .footer-social ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header-three-wordmark {
+    font-size: 1.55rem;
+  }
+
+  .banner-three-center-title {
+    font-size: 1.65rem;
+  }
+
+  .banner-three-left ul li {
+    font-size: 0.82rem !important;
+  }
+}
+
 /* ======================= Css table of contents Start =================================
    * Template name: Unifex
    * Version: 1.0
