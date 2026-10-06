@@ -7675,6 +7675,24 @@ body.tw-magic-cursor #magic-cursor {
   transform: translateY(-50%);
   background: hsl(var(--heading-color));
 }
+
+/* Keep the standalone portfolio document scrollable on touch devices. */
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
 .section-title {
   line-height: 0.9;
 }
