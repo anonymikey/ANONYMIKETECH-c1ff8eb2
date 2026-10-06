@@ -49,9 +49,10 @@
     gsap.config({
       nullTargetWarn: false,
     });
-    let smoother = ScrollSmoother.create({
-      smoothTouch: 0.2,
-      smooth: 4,
+    const smoother = ScrollSmoother.create({
+      // Keep the desktop effect, but let mobile browsers own touch scrolling.
+      smoothTouch: false,
+      smooth: 1.2,
       effects: true,
       normalizeScroll: false,
       ignoreMobileResize: true,
