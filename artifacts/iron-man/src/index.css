@@ -35,7 +35,20 @@ body {
 }
 
 body {
+  min-height: 100%;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
 
 /* ─── Card surface ─── */

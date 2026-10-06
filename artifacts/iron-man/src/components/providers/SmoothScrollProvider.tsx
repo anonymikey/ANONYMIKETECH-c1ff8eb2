@@ -10,10 +10,11 @@ export function SmoothScrollProvider({ children }: Props) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     const lenis = new Lenis({
-      lerp: 0.1,
-      duration: 1.2,
-      smoothWheel: true,
+      lerp: isTouchDevice ? 0.16 : 0.1,
+      duration: isTouchDevice ? 0.8 : 1.2,
+      smoothWheel: !isTouchDevice,
       syncTouch: false,
       touchMultiplier: 1.1,
     });
