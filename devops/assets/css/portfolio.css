@@ -7,19 +7,31 @@
   html,
   body {
     min-height: 100%;
-    height: auto;
+    height: auto !important;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll !important;
+    overscroll-behavior-y: auto;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-y pinch-zoom;
   }
 
-  .hero,
+  main,
+  #home.hero,
   .hero-visual,
   .visual-grid {
-    touch-action: pan-y;
+    touch-action: pan-y pinch-zoom;
   }
 
-  .hero {
-    min-height: auto;
+  #home.hero {
+    display: block;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .hero-visual,
+  .hero-visual img,
+  .visual-grid {
+    pointer-events: none;
   }
 }
