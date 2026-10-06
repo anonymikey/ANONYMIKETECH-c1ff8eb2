@@ -10,19 +10,12 @@ export function SmoothScrollProvider({ children }: Props) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-
-    // Keep native touch scrolling on phones and tablets. Lenis can capture
-    // touch gestures before the browser's scroll container receives them.
-    if (isTouchDevice) {
-      return;
-    }
-
     const lenis = new Lenis({
       lerp: 0.1,
       duration: 1.2,
       smoothWheel: true,
       syncTouch: false,
+      touchMultiplier: 1.1,
     });
     lenisRef.current = lenis;
 
