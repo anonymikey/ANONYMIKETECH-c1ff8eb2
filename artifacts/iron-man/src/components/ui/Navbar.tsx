@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+
+const PORTFOLIO_HREF = "/devops/index.html";
 import { ArrowUpRight, CaretDown, X } from "@phosphor-icons/react";
 import { Logo } from "@/components/ui/Logo";
 import { HudFrame } from "@/components/ui/HudFrame";
@@ -257,7 +259,7 @@ function MobileMenu({
             { href: "/#synth", label: "SYNTH", icon: "◈" },
             { href: "/#systems", label: "Systems", icon: "⬡" },
             { href: "/#archive", label: "Archive", icon: "▤" },
-            { href: "/devops/index.html", label: "Meet the developer", icon: "⌘" },
+            { href: PORTFOLIO_HREF, label: "Meet the developer", icon: "⌘" },
           ].map((item) => (
             <a
               key={item.href}
@@ -436,8 +438,9 @@ export function Navbar() {
               Archive
             </a>
             <a
-              href="/devops/"
-              className="rounded-lg px-3 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-400 transition-colors hover:text-foreground"
+              href={PORTFOLIO_HREF}
+              data-portfolio-link
+              className="rounded-lg px-3 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-400 transition-colors hover:text-foreground active:text-accent"
             >
               Meet the developer
             </a>

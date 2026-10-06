@@ -1,16 +1,16 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #0a0a0b;
-  --foreground: #e4e4e7;
-  --muted: #71717a;
-  --accent: #d4a22f;
-  --accent-soft: rgba(212, 162, 47, 0.14);
-  --brand-blue: #59d9f7;
-  --brand-blue-soft: rgba(37, 190, 232, 0.18);
-  --card-bg: rgba(24, 24, 27, 0.55);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --hud-line: rgba(255, 255, 255, 0.1);
+  --background: #070b12;
+  --foreground: #edf7fb;
+  --muted: #8aa1ad;
+  --accent: #e6b84a;
+  --accent-soft: rgba(230, 184, 74, 0.14);
+  --brand-blue: #63e3ff;
+  --brand-blue-soft: rgba(99, 227, 255, 0.16);
+  --card-bg: rgba(13, 25, 35, 0.68);
+  --card-border: rgba(143, 226, 245, 0.14);
+  --hud-line: rgba(143, 226, 245, 0.16);
   --font-geist-sans: 'Geist', system-ui, sans-serif;
   --font-geist-mono: 'Geist Mono', ui-monospace, monospace;
 }
