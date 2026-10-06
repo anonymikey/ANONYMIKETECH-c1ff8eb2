@@ -49,14 +49,18 @@
     gsap.config({
       nullTargetWarn: false,
     });
-    const smoother = ScrollSmoother.create({
-      // Keep the desktop effect, but let mobile browsers own touch scrolling.
-      smoothTouch: false,
-      smooth: 1.2,
-      effects: true,
-      normalizeScroll: false,
-      ignoreMobileResize: true,
-    });
+    const isMobileViewport = window.matchMedia("(max-width: 767px)").matches;
+
+    // ScrollSmoother changes the document flow on small touch screens. Keep
+    // the native document scroller on mobile and reserve the effect for desktop.
+    if (!isMobileViewport) {
+      ScrollSmoother.create({
+        smooth: 1.2,
+        effects: true,
+        normalizeScroll: false,
+        ignoreMobileResize: true,
+      });
+    }
   }
 
   ////////////////////////////////////////////////////

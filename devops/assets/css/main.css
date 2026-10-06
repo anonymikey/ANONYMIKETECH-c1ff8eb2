@@ -1,3 +1,24 @@
+/* Keep the portfolio on the native document scroller on mobile. */
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  #smooth-wrapper,
+  #smooth-content {
+    min-height: 100%;
+    height: auto !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+}
+
 /* Media Breakpoint for Each Device End */
 /* ======================= Css table of contents Start =================================
    * Template name: Unifex
