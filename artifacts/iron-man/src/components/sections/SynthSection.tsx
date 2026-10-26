@@ -89,8 +89,22 @@ export function SynthSection() {
           </AnimatedItem>
 
           <AnimatedItem>
+            <figure className="max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-VL0QYObWd1VSOLiMITArmHLrTGBr8D.png"
+                alt="SYNTH development workspace showing the build interface"
+                className="h-auto w-full object-cover"
+                loading="lazy"
+              />
+              <figcaption className="border-t border-white/10 px-4 py-3 font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">
+                SYNTH / BUILD INTERFACE
+              </figcaption>
+            </figure>
+          </AnimatedItem>
+
+          <AnimatedItem>
             <a
-              href="#synth-workflow"
+              href="https://synth.anonymiketech.space/devdocs" target="_blank" rel="noopener noreferrer"
               data-cursor-magnet
               className="group inline-flex items-center gap-2 self-start rounded-full border border-accent/35 bg-accent/[0.08] px-5 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-accent backdrop-blur-md transition-all duration-200 hover:bg-accent/[0.14] active:translate-y-[1px]"
             >
