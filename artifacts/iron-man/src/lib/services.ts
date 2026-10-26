@@ -119,6 +119,7 @@ export const SERVICES: Record<ServiceSlug, ServiceDefinition> = {
     capabilities: [
       "WiFi Deployment",
       "ISP Systems",
+      "Hotspot Billing Systems",
       "VPN Architecture",
       "Network Design",
       "Connectivity Solutions",
