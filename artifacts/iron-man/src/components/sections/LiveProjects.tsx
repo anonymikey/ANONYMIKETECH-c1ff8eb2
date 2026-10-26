@@ -5,7 +5,8 @@ import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 
 const projects = [
   { id: "anonymiketech", name: "ANONYMIKETECH", status: "LIVE", category: "AI • Web • Cloud • Internet Solutions", description: "A technology and innovation platform focused on AI, web development, cloud solutions, internet services, and digital experiences.", image: "/favicon.svg", url: "https://anonymiketech.space", featured: true },
-  { id: "synth", name: "SYNTH", status: "COMING SOON", category: "AI Agent / Development Platform", description: "An intelligent development platform currently in active development.", image: "/synth-logo.png", comingSoon: true },
+  { id: "synth", name: "SYNTH", status: "COMING SOON", category: "AI Agent / Development Platform", description: "An intelligent development platform currently in active development.", image: "/synth-logo.png", url: "https://synth.anonymiketech.space/devdocs", comingSoon: true },
+  { id: "synthnet", name: "SYNTHNET", status: "COMING SOON", category: "Hotspot Billing • Network Operations", description: "A unified hotspot billing and network console connecting subscribers, payments, MikroTik routers, and access points.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-h4gyyYOxo7ZbD2GoVLzOr70Twv5PbC.png", url: "https://synthnet.anonymiketech.space", comingSoon: true },
   { id: "economic-justice-forum", name: "ECONOMIC JUSTICE FORUM", status: "LIVE", category: "Web Development • Organization Website", description: "A professional web platform created for Economic Justice Forum.", image: "/ejf-logo.png", url: "https://www.economicjusticeforum.org" },
   { id: "ecostruct-dynamics", name: "ECOSTRUCT DYNAMICS LTD", status: "LIVE", category: "Web Development • Corporate Website", description: "A professional corporate website created for EcoStruct Dynamics Ltd.", image: "/ecostruct-logo.jpg", url: "https://www.ecostructdynamicsltd.com" },
 ] as const;
@@ -37,18 +38,18 @@ export function LiveProjects() {
           {visibleProjects.map((project, index) => (
             <AnimatedItem key={project.id} className={project.featured ? "md:col-span-2" : ""} style={{ animationDelay: `${index * 90}ms` }}>
               <article className={`live-project-card group grid h-full overflow-hidden rounded-3xl border bg-white/[0.035] ${project.featured ? "md:grid-cols-[1.1fr_.9fr] border-accent/45" : "border-white/10"}`}>
-                <div className="live-project-visual relative flex min-h-[230px] items-center justify-center overflow-hidden bg-[#07131e] p-8 md:min-h-[280px]">
+                <div className={`live-project-visual relative flex min-h-[230px] items-center justify-center overflow-hidden p-8 md:min-h-[280px] ${project.id === "synthnet" ? "bg-[#071018]" : "bg-[#07131e]"}`}>
                   <div className="absolute inset-5 rounded-2xl border border-brand-blue/15" />
                   <div className="absolute inset-0 bg-[linear-gradient(transparent_49%,rgba(89,217,247,.05)_50%,transparent_51%)] bg-[length:100%_24px]" />
                   <img src={project.image} alt={`${project.name} visual identity`} className="relative z-10 max-h-40 max-w-[78%] object-contain drop-shadow-[0_0_24px_rgba(89,217,247,.22)] transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                  {project.featured && <span className="absolute bottom-6 left-8 z-10 font-mono text-[9px] leading-relaxed tracking-[.18em] text-brand-blue/70">SYSTEM ONLINE<br />LIVE PLATFORM<br />AI SYSTEMS</span>}
+                  {project.id === "synthnet" && <span className="absolute bottom-6 left-8 z-10 font-mono text-[9px] leading-relaxed tracking-[.18em] text-[#29d7c8]/80">UPCOMING PLATFORM<br />HOTSPOT BILLING<br />NETWORK CONSOLE</span>}{project.featured && <span className="absolute bottom-6 left-8 z-10 font-mono text-[9px] leading-relaxed tracking-[.18em] text-brand-blue/70">SYSTEM ONLINE<br />LIVE PLATFORM<br />AI SYSTEMS</span>}
                 </div>
                 <div className="flex flex-col p-7 md:p-9">
                   <div className={`flex items-center gap-2 font-mono text-[10px] font-medium tracking-[.18em] ${project.comingSoon ? "text-brand-blue" : "text-emerald-300"}`}><span className="h-1.5 w-1.5 rounded-full bg-current shadow-[0_0_10px_currentColor]" />{project.status}</div>
                   <h3 className="mt-5 font-sans text-2xl font-semibold leading-tight text-foreground md:text-3xl">{project.name}</h3>
                   <p className="mt-2 font-mono text-[10px] uppercase tracking-[.16em] text-brand-blue">{project.category}</p>
                   <p className="mt-5 text-sm leading-relaxed text-zinc-400">{project.description}</p>
-                  {project.comingSoon ? <span className="mt-auto pt-8 font-mono text-[10px] tracking-[.18em] text-zinc-500">IN DEVELOPMENT / NEXT PLATFORM</span> : <a href={project.url} target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex w-fit items-center gap-2 pt-8 font-mono text-[10px] tracking-[.18em] text-foreground transition-colors hover:text-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">VIEW PROJECT <ArrowUpRight size={15} weight="bold" aria-hidden="true" /><span className="sr-only">{project.name} opens in a new tab</span></a>}
+                  {project.comingSoon && !project.url ? <span className="mt-auto pt-8 font-mono text-[10px] tracking-[.18em] text-zinc-500">IN DEVELOPMENT / NEXT PLATFORM</span> : <a href={project.url} target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex w-fit items-center gap-2 pt-8 font-mono text-[10px] tracking-[.18em] text-foreground transition-colors hover:text-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">VIEW PROJECT <ArrowUpRight size={15} weight="bold" aria-hidden="true" /><span className="sr-only">{project.name} opens in a new tab</span></a>}
                 </div>
               </article>
             </AnimatedItem>

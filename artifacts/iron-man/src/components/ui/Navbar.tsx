@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const PORTFOLIO_HREF = "/devops/index.html";
+const PORTFOLIO_HREF = "https://developer.anonymiketech.space";
 import { ArrowUpRight, CaretDown, X } from "@phosphor-icons/react";
 import { Logo } from "@/components/ui/Logo";
 import { HudFrame } from "@/components/ui/HudFrame";
@@ -256,7 +256,7 @@ function MobileMenu({
 
           {/* Other nav items */}
           {[
-            { href: "/#synth", label: "SYNTH", icon: "◈" },
+            { href: "https://synth.anonymiketech.space/devdocs", label: "SYNTH", icon: "◈" },
             { href: "/#systems", label: "Systems", icon: "⬡" },
             { href: "/#archive", label: "Archive", icon: "▤" },
             { href: PORTFOLIO_HREF, label: "Meet the developer", icon: "⌘" },
@@ -420,7 +420,7 @@ export function Navbar() {
             </div>
 
             <a
-              href="/#synth"
+              href="https://synth.anonymiketech.space/devdocs"
               className="rounded-lg px-3 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-400 transition-colors hover:text-foreground"
             >
               SYNTH
