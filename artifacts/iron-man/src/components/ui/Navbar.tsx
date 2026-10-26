@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const PORTFOLIO_HREF = "/devops/index.html";
+const PORTFOLIO_HREF = "https://developer.anonymiketech.space";
 import { ArrowUpRight, CaretDown, X } from "@phosphor-icons/react";
 import { Logo } from "@/components/ui/Logo";
 import { HudFrame } from "@/components/ui/HudFrame";
