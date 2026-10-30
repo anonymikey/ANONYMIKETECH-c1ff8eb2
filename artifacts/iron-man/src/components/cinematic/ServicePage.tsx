@@ -118,7 +118,7 @@ export function ServicePage({ service, onEngage }: Props) {
             </div>
 
             <div>
-              <p className="max-w-[42ch] font-sans text-base leading-relaxed text-zinc-400 md:text-lg">
+              <p className="service-page__typing max-w-[42ch] font-sans text-base leading-relaxed text-zinc-400 md:text-lg">
                 {service.tagline}
               </p>
             </div>
@@ -152,11 +152,29 @@ export function ServicePage({ service, onEngage }: Props) {
         <ServiceVisual service={service} />
       </>
 
+      {/* Service readout */}
+      <section className="service-readout border-t border-white/5 bg-background px-6 py-8 md:px-10">
+        <div className="mx-auto grid max-w-[1400px] gap-4 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/8">
+          <div className="service-readout__item px-0 sm:px-8 sm:first:pl-0">
+            <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-zinc-500">Capability modules</span>
+            <strong className="mt-2 block font-sans text-3xl font-semibold tracking-tight text-foreground">{String(service.capabilities.length).padStart(2, "0")}</strong>
+          </div>
+          <div className="service-readout__item px-0 sm:px-8">
+            <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-zinc-500">Preferred systems</span>
+            <strong className="mt-2 block font-sans text-3xl font-semibold tracking-tight text-accent">{String(service.technology.length).padStart(2, "0")}</strong>
+          </div>
+          <div className="service-readout__item px-0 sm:px-8 sm:last:pr-0">
+            <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-zinc-500">Channel state</span>
+            <strong className="mt-2 block font-mono text-lg uppercase tracking-[0.16em] text-foreground">{service.statusLabel}</strong>
+          </div>
+        </div>
+      </section>
+
       {/* Capabilities */}
       <section className="relative border-t border-white/5 bg-background px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-16 md:grid-cols-[1fr_1.2fr] md:gap-20">
-            <div className="flex flex-col gap-7">
+<div className="service-page__hero-content flex flex-col gap-7">
               <div>
                 <EyebrowBadge>CAPABILITIES</EyebrowBadge>
               </div>
