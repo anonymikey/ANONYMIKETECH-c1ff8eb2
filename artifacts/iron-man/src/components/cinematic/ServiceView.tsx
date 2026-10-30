@@ -24,6 +24,7 @@ function EngagementPanel({
     >
       <div className="engage-panel">
         <button
+          type="button"
           className="modal-close"
           onClick={onClose}
           aria-label="Close panel"
@@ -38,7 +39,7 @@ function EngagementPanel({
               Your project brief is staged locally. Connect a backend to
               transmit it.
             </small>
-            <button onClick={onClose}>RETURN TO PLATFORM</button>
+            <button type="button" onClick={onClose}>RETURN TO PLATFORM</button>
           </div>
         ) : (
           <>

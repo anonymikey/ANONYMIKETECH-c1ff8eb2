@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -17,7 +17,7 @@ const itemVariants: Variants = {
   },
 };
 
-type SectionProps = { children: ReactNode; className?: string };
+type SectionProps = Omit<ComponentPropsWithoutRef<"div">, "children"> & { children: ReactNode };
 
 export function AnimatedSection({ children, className = "" }: SectionProps) {
   return (

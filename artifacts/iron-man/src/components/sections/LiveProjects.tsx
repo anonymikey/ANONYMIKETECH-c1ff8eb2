@@ -3,7 +3,19 @@ import { useMemo, useState } from "react";
 import { AnimatedItem, AnimatedSection } from "@/components/ui/AnimatedSection";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 
-const projects = [
+type Project = {
+  id: string;
+  name: string;
+  status: "LIVE" | "COMING SOON";
+  category: string;
+  description: string;
+  image: string;
+  url: string;
+  featured?: boolean;
+  comingSoon?: boolean;
+};
+
+const projects: Project[] = [
   { id: "anonymiketech", name: "ANONYMIKETECH", status: "LIVE", category: "AI • Web • Cloud • Internet Solutions", description: "A technology and innovation platform focused on AI, web development, cloud solutions, internet services, and digital experiences.", image: "/favicon.svg", url: "https://anonymiketech.space", featured: true },
   { id: "synth", name: "SYNTH", status: "COMING SOON", category: "AI Agent / Development Platform", description: "An intelligent development platform currently in active development.", image: "/synth-logo.png", url: "https://synth.anonymiketech.space", comingSoon: true },
   { id: "synthnet", name: "SYNTHNET", status: "COMING SOON", category: "Hotspot Billing • Network Operations", description: "A unified hotspot billing and network console connecting subscribers, payments, MikroTik routers, and access points.", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-h4gyyYOxo7ZbD2GoVLzOr70Twv5PbC.png", url: "https://synthnet.anonymiketech.space", comingSoon: true },
