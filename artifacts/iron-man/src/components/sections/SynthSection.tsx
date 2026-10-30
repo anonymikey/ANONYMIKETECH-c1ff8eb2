@@ -104,7 +104,7 @@ export function SynthSection() {
 
           <AnimatedItem>
             <a
-              href="https://synth.anonymiketech.space/devdocs" target="_blank" rel="noopener noreferrer"
+              href="https://synth.anonymiketech.space/dev-updates" target="_blank" rel="noopener noreferrer"
               data-cursor-magnet
               className="group inline-flex items-center gap-2 self-start rounded-full border border-accent/35 bg-accent/[0.08] px-5 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-accent backdrop-blur-md transition-all duration-200 hover:bg-accent/[0.14] active:translate-y-[1px]"
             >
