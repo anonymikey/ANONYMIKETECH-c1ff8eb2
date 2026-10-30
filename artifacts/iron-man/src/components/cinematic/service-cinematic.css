@@ -60,7 +60,7 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 80%);
-  animation: service-grid-drift 20s linear infinite;
+  animation: service-grid-drift 36s linear infinite;
 }
 
 @keyframes service-grid-drift {
@@ -95,20 +95,20 @@
 .service-visual__ring--outer {
   inset: 0;
   border-color: rgba(86, 216, 245, 0.18);
-  animation: service-orbit 14s linear infinite;
+  animation: service-orbit 26s linear infinite;
 }
 
 .service-visual__ring--mid {
   inset: 15%;
   border-color: rgba(212, 162, 47, 0.22);
   border-style: dashed;
-  animation: service-orbit-reverse 18s linear infinite;
+  animation: service-orbit-reverse 34s linear infinite;
 }
 
 .service-visual__ring--inner {
   inset: 30%;
   border-color: rgba(86, 216, 245, 0.15);
-  animation: service-orbit 10s linear infinite reverse;
+  animation: service-orbit 22s linear infinite reverse;
 }
 
 @keyframes service-orbit { to { transform: rotate(360deg); } }

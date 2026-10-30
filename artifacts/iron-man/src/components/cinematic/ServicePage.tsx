@@ -1,8 +1,6 @@
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { HudFrame } from "@/components/ui/HudFrame";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
-import { AnimatedItem, AnimatedSection } from "@/components/ui/AnimatedSection";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import type { ServiceDefinition } from "@/lib/services";
 
 type Props = {
@@ -90,8 +88,8 @@ export function ServicePage({ service, onEngage }: Props) {
         </div>
 
         <div className="mx-auto max-w-[1400px]">
-          <AnimatedSection className="flex flex-col gap-7">
-            <AnimatedItem>
+          <div className="flex flex-col gap-7">
+            <div>
               <div className="flex items-center gap-3">
                 <EyebrowBadge>{service.eyebrow}</EyebrowBadge>
                 <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500">
@@ -99,15 +97,15 @@ export function ServicePage({ service, onEngage }: Props) {
                   {service.statusLabel}
                 </span>
               </div>
-            </AnimatedItem>
+            </div>
 
-            <AnimatedItem>
+            <div>
               <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-accent">
                 {service.code} // {service.name}
               </span>
-            </AnimatedItem>
+            </div>
 
-            <AnimatedItem>
+            <div>
               <h1 className="max-w-[14ch] font-sans text-5xl font-semibold leading-[0.95] tracking-tighter text-foreground md:text-7xl lg:text-8xl">
                 {service.name.split(" & ")[0].split(" ")[0]}
                 <br />
@@ -117,21 +115,21 @@ export function ServicePage({ service, onEngage }: Props) {
                     : service.name.split(" ").slice(1).join(" ")}
                 </span>
               </h1>
-            </AnimatedItem>
+            </div>
 
-            <AnimatedItem>
+            <div>
               <p className="max-w-[42ch] font-sans text-base leading-relaxed text-zinc-400 md:text-lg">
                 {service.tagline}
               </p>
-            </AnimatedItem>
+            </div>
 
-            <AnimatedItem>
+            <div>
               <p className="max-w-[52ch] font-sans text-sm leading-relaxed text-zinc-500 md:text-base">
                 {service.description}
               </p>
-            </AnimatedItem>
+            </div>
 
-            <AnimatedItem>
+            <div>
               <button
                 onClick={() => onEngage(service.name)}
                 data-cursor-magnet
@@ -144,41 +142,41 @@ export function ServicePage({ service, onEngage }: Props) {
                   className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </button>
-            </AnimatedItem>
-          </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Animated visual composition (replaces cinematic frame sequence) */}
-      <ScrollReveal>
+      <>
         <ServiceVisual service={service} />
-      </ScrollReveal>
+      </>
 
       {/* Capabilities */}
       <section className="relative border-t border-white/5 bg-background px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[1400px]">
-          <AnimatedSection className="grid gap-16 md:grid-cols-[1fr_1.2fr] md:gap-20">
+          <div className="grid gap-16 md:grid-cols-[1fr_1.2fr] md:gap-20">
             <div className="flex flex-col gap-7">
-              <AnimatedItem>
+              <div>
                 <EyebrowBadge>CAPABILITIES</EyebrowBadge>
-              </AnimatedItem>
-              <AnimatedItem>
+              </div>
+              <div>
                 <h2 className="max-w-[14ch] font-sans text-4xl font-semibold leading-[0.95] tracking-tighter text-foreground md:text-6xl">
                   What we{" "}
                   <span className="text-accent">build.</span>
                 </h2>
-              </AnimatedItem>
-              <AnimatedItem>
+              </div>
+              <div>
                 <p className="max-w-[42ch] font-sans text-base leading-relaxed text-zinc-400">
                   Each capability is delivered with measurable outcomes and
                   purpose-built architecture for {service.name.toLowerCase()}.
                 </p>
-              </AnimatedItem>
+              </div>
             </div>
 
-            <AnimatedSection className="flex flex-col divide-y divide-white/8 border-t border-white/8 font-mono md:mt-3">
+            <div className="flex flex-col divide-y divide-white/8 border-t border-white/8 font-mono md:mt-3">
               {service.capabilities.map((capability, index) => (
-                <AnimatedItem key={capability}>
+                <div key={capability}>
                   <div className="flex items-baseline justify-between gap-6 py-5">
                     <div className="flex items-center gap-4">
                       <span className="text-[10px] uppercase tracking-[0.28em] text-accent">
@@ -192,27 +190,27 @@ export function ServicePage({ service, onEngage }: Props) {
                       ONLINE
                     </span>
                   </div>
-                </AnimatedItem>
+                </div>
               ))}
-            </AnimatedSection>
-          </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Technology */}
       <section className="relative border-t border-white/5 bg-background px-6 py-24 md:px-10 md:py-28">
         <div className="mx-auto max-w-[1400px]">
-          <AnimatedSection className="flex flex-col gap-10">
-            <AnimatedItem>
+          <div className="flex flex-col gap-10">
+            <div>
               <EyebrowBadge>TECHNOLOGY STACK</EyebrowBadge>
-            </AnimatedItem>
-            <AnimatedItem>
+            </div>
+            <div>
               <h2 className="max-w-[18ch] font-sans text-3xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-5xl">
                 Systems &{" "}
                 <span className="text-accent">tools.</span>
               </h2>
-            </AnimatedItem>
-            <AnimatedItem>
+            </div>
+            <div>
               <div className="flex flex-wrap gap-3">
                 {service.technology.map((tech) => (
                   <span
@@ -223,31 +221,31 @@ export function ServicePage({ service, onEngage }: Props) {
                   </span>
                 ))}
               </div>
-            </AnimatedItem>
-          </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="relative border-t border-white/5 bg-background px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[1400px] text-center">
-          <AnimatedSection className="flex flex-col items-center gap-8">
-            <AnimatedItem>
+          <div className="flex flex-col items-center gap-8">
+            <div>
               <EyebrowBadge>OPEN CHANNEL</EyebrowBadge>
-            </AnimatedItem>
-            <AnimatedItem>
+            </div>
+            <div>
               <h2 className="max-w-[18ch] font-sans text-4xl font-semibold leading-[0.95] tracking-tighter text-foreground md:text-6xl">
                 Ready to{" "}
                 <span className="text-accent">build?</span>
               </h2>
-            </AnimatedItem>
-            <AnimatedItem>
+            </div>
+            <div>
               <p className="max-w-[48ch] font-sans text-base leading-relaxed text-zinc-400">
                 {service.description} Let&apos;s map the right architecture,
                 delivery path and measurable outcome for your team.
               </p>
-            </AnimatedItem>
-            <AnimatedItem>
+            </div>
+            <div>
               <button
                 onClick={() => onEngage(service.name)}
                 data-cursor-magnet
@@ -260,8 +258,8 @@ export function ServicePage({ service, onEngage }: Props) {
                   className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </button>
-            </AnimatedItem>
-          </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
     </div>
